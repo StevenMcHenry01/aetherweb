@@ -1,8 +1,59 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
+
+const aileron = localFont({
+  src: [
+    {
+      path: "../public/aileron/Aileron-UltraLight.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-Thin.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-Light.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-Regular.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-Heavy.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../public/aileron/Aileron-Black.otf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-aileron",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +67,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${aileron.variable} ${roboto.variable} font-sans`}>
+        {children}
+      </body>
     </html>
   );
 }
