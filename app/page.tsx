@@ -6,6 +6,11 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       <Nav />
       <Hero />
+      <Hero />
+      <Hero />
+      <Hero />
+      <Hero />
+      <Hero />
     </main>
   );
 }

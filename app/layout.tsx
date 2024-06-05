@@ -66,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth" id="home">
       <body className={`${aileron.variable} ${roboto.variable} font-sans`}>
         {children}
       </body>
