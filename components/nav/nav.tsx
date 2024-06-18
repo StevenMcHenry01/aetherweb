@@ -1,7 +1,8 @@
-import Image from "next/image";
+import classNames from "classnames";
 import Link from "next/link";
-import LogoWhite from "../public/logo-white.svg";
-import { FloatingNav } from "./ui/floating-navbar";
+import LogoSvg from "../svgs/logo";
+import { FloatingNav } from "../ui/floating-navbar";
+import styles from "./styles.module.scss";
 
 const navItems = [
   {
@@ -23,10 +24,11 @@ export const Nav = () => {
     <>
       <nav className="justify-between items-center px-2 sm:px-8 flex h-[70px] sm:h-[100px] border-b-gray-500 border-b bg-background font-header font-light">
         <Link href="/">
-          <Image
-            src={LogoWhite}
-            alt="logo"
-            className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px]"
+          <LogoSvg
+            className={classNames(
+              "w-[60px] h-[60px] sm:w-[80px] sm:h-[80px]",
+              styles.logo
+            )}
           />
         </Link>
         <div className="flex items-center gap-4 sm:gap-16 text-primary text-sm sm:text-lg">
