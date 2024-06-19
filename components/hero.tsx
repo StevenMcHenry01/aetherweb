@@ -19,7 +19,7 @@ export const Hero = () => {
           Turning great ideas into brands that people love.{" "}
         </h3>
         <Link
-          className="pt-10 sm:pt-32 text-xl sm:text-3xl ml-auto text-primary font-light"
+          className="pt-10 sm:pt-32 text-xl sm:text-3xl ml-auto text-primary font-light pb-40 sm:pb-0"
           href="#what-we-do"
         >
           sounds sweet, show me more...

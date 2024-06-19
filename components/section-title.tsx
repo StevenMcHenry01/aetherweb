@@ -8,7 +8,7 @@ export const SectionTitle = ({
   return (
     <div>
       <h2
-        className="text-3xl font-bold font-header"
+        className="text-3xl font-medium font-header"
         style={{
           color: color ?? "",
         }}

@@ -1,3 +1,4 @@
+import { AboutUs } from "../components/about-us";
 import { Hero } from "../components/hero";
 import { Nav } from "../components/nav/nav";
 import { OurProcess } from "../components/our-process";
@@ -12,6 +13,7 @@ export default function Home() {
       <WhatWeDo />
       <OurProcess />
       <WhyUs />
+      <AboutUs />
     </main>
   );
 }
