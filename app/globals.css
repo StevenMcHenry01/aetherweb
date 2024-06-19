@@ -20,6 +20,7 @@
     --secondary-foreground: hsl(187 108% 6%);
 
     --tertiary: hsl(241 100% 80%);
+    --tertiary-dark: hsl(241 100% 75%);
     --tertiary-foreground: hsl(187 108% 6%);
 
     --muted: hsl(187 108% 40%);

@@ -35,6 +35,7 @@ const config = {
         tertiary: {
           DEFAULT: "var(--tertiary)",
           foreground: "var(--tertiary-foreground)",
+          dark: "var(--tertiary-dark)",
         },
         destructive: {
           DEFAULT: "var(--destructive)",
