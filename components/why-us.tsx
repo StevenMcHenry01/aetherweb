@@ -10,7 +10,7 @@ import {
 
 export const WhyUs = () => {
   return (
-    <SectionWrapper id="why-us">
+    <SectionWrapper id="why-us" className="!pb-20">
       <SectionTitle title="Why Us" color={theme.tertiary} />
       <Accordion
         type="single"
