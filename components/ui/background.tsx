@@ -36,7 +36,7 @@ export const Background = ({
     >
       <div className="absolute inset-0 bg-dot-thick-[#432923] pointer-events-none" />
       <motion.div
-        className="pointer-events-none bg-dot-thick-[#7c3f31] absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none bg-dot-thick-[#b47364] absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
@@ -76,8 +76,8 @@ export const Highlight = ({
         backgroundSize: "100% 100%",
       }}
       transition={{
-        duration: 2,
-        ease: "linear",
+        duration: 1,
+        ease: "easeInOut",
         delay: 2,
       }}
       style={{

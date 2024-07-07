@@ -1,19 +1,13 @@
-import classNames from "classnames";
+import Image from "next/image";
 import Link from "next/link";
-import styles from "./nav/styles.module.scss";
-import LogoSvg from "./svgs/logo";
+import Logo from "../public/logo.svg";
 
 export const Footer = () => {
   return (
     <footer className="w-full bg-background text-primary py-6 px-4 flex sm:flex-row flex-col justify-between items-center border-b-2 border-primary border-t-2">
       <div className="flex gap-5 items-center flex-wrap">
         <Link href="/">
-          <LogoSvg
-            className={classNames(
-              "w-[60px] h-[60px] sm:w-[80px] sm:h-[80px]",
-              styles.logo
-            )}
-          />
+          <Image src={Logo} alt="logo" width={70} height={70} />
         </Link>
         <Link href="/#">Home</Link>
         <Link href="/#what-we-do">What We Do</Link>

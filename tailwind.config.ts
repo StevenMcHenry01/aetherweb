@@ -41,6 +41,7 @@ const config = {
         foreground: "var(--foreground)",
         primary: {
           DEFAULT: "var(--primary)",
+          dark: "var(--primary-dark)",
           foreground: "var(--primary-foreground)",
         },
         secondary: {
