@@ -55,10 +55,18 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-full sm:max-w-fit fixed top-6 inset-x-0 mx-4 sm:mx-auto rounded-full border border-primary bg-background shadow-lg z-[5000] p-3 sm:px-10 items-center justify-center space-x-4 sm:space-x-8",
+          "flex max-w-full sm:max-w-fit fixed top-6 inset-x-0 mx-4 sm:mx-auto rounded-lg border border-primary bg-background shadow-lg z-[5000] p-3 sm:px-10 items-center justify-center space-x-4 sm:space-x-8",
           className
         )}
       >
+        <Link
+          href={"/"}
+          className={cn(
+            "relative items-center flex space-x-1 text-gray-200 hover:text-primary text-sm sm:text-base"
+          )}
+        >
+          HOME
+        </Link>
         {navItems.map((navItem: any) => (
           <Link
             key={navItem.name}
@@ -70,7 +78,7 @@ export const FloatingNav = ({
             {navItem.name}
           </Link>
         ))}
-        <button className="text-background bg-primary rounded-md py-1 px-2 sm:px-6 mr-6 text-sm sm:text-base">
+        <button className="text-background bg-primary rounded-md py-1 px-2 sm:px-6 mr-6 text-sm sm:text-base hidden sm:block">
           <span>Connect</span>
         </button>
       </motion.div>

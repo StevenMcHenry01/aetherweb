@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Dude from "../public/dude.jpeg";
+import Robert from "../public/robert.jpeg";
+import Steven from "../public/steven.jpeg";
 import { theme } from "../theme.config";
 import { SectionTitle } from "./section-title";
 import { SectionWrapper } from "./section-wrapper";
@@ -11,7 +12,7 @@ export const AboutUs = () => {
       <div className="flex flex-wrap justify-center gap-6 pt-16 sm:pt-28">
         <div className="flex flex-col items-center gap-8">
           <Image
-            src={Dude}
+            src={Robert}
             alt="Dude"
             width={400}
             height={600}
@@ -23,7 +24,7 @@ export const AboutUs = () => {
         </div>
         <div className="flex flex-col items-center gap-8">
           <Image
-            src={Dude}
+            src={Steven}
             alt="Dude"
             width={400}
             height={600}
