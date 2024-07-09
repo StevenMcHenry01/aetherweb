@@ -1,25 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/logo.svg";
+import { CtaButton } from "./cta-button";
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-background text-primary py-6 px-4 flex sm:flex-row flex-col justify-between items-center border-b-2 border-primary border-t-2">
+    <footer className="w-full bg-background text-primary py-6 px-4 flex flex-row justify-between items-center border-b-2 border-primary border-t-2">
       <div className="flex gap-5 items-center flex-wrap">
         <Link href="/">
-          <Image src={Logo} alt="logo" width={70} height={70} />
+          <Image src={Logo} alt="logo" className="w-[40px] sm:w-[70px]" />
         </Link>
-        <Link href="/#">Home</Link>
-        <Link href="/#what-we-do">What We Do</Link>
-        <p>Copyright {new Date().getFullYear()}</p>
+        <Link className="hover:text-primary-dark transition-all" href="/#">
+          Back to top
+        </Link>
+        <p>© {new Date().getFullYear()}</p>
       </div>
-      <a
-        href="https://www.linkedin.com/in/robert-gregg-1b1b1b1b1/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        info@aetherweb.co
-      </a>
+      <CtaButton />
     </footer>
   );
 };

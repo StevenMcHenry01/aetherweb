@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "../../public/logo.svg";
+import { CtaButton } from "../cta-button";
 import { FloatingNav } from "../ui/floating-navbar";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import styles from "./styles.module.scss";
@@ -22,13 +23,17 @@ const navItems = [
     name: "WHY US",
     link: "#why-us",
   },
+  {
+    name: "ABOUT US",
+    link: "#about-us",
+  },
 ];
 
 export const Nav = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <nav className="justify-between items-center px-4 sm:px-20 sm:pl-24 flex h-[70px] sm:h-[100px] border-b-gray-500 border-b bg-background font-header font-light">
+      <nav className="justify-between items-center px-4 sm:px-20 flex h-[70px] sm:h-[100px] border-b-gray-500 border-b bg-background font-header font-light">
         <Link href="/">
           <Image
             className={`${styles.logo} hover:animate-pulse`}
@@ -52,9 +57,7 @@ export const Nav = () => {
               </span>
             </Link>
           ))}
-          <button className="text-background bg-primary rounded-md py-1 px-2 sm:px-6 mr-4 sm:mr-6 text-sm sm:text-lg font-normal hover:bg-primary-dark transition-all">
-            CONNECT
-          </button>
+          <CtaButton />
         </div>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="block sm:hidden">
@@ -72,6 +75,7 @@ export const Nav = () => {
               <Link
                 key={navItem.name}
                 href={navItem.link}
+                className="text-xl font-semibold"
                 onClick={() => {
                   setOpen(false);
                 }}
@@ -79,9 +83,7 @@ export const Nav = () => {
                 {navItem.name}
               </Link>
             ))}
-            <button className="text-background bg-primary rounded-md py-1 px-2 sm:px-6 text-sm sm:text-lg font-normal hover:bg-primary-dark transition-all">
-              CONNECT
-            </button>
+            <CtaButton />
           </SheetContent>
         </Sheet>
       </nav>

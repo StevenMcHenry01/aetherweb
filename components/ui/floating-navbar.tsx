@@ -8,6 +8,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "../../lib/utils";
+import { CtaButton } from "../cta-button";
 
 export const FloatingNav = ({
   navItems,
@@ -55,32 +56,30 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-full sm:max-w-fit fixed top-6 inset-x-0 mx-4 sm:mx-auto rounded-lg border border-primary bg-background shadow-lg z-[5000] p-3 sm:px-10 items-center justify-center space-x-4 sm:space-x-8",
+          "flex max-w-full sm:max-w-fit fixed top-6 inset-x-0 mx-4 sm:mx-auto rounded-lg border border-primary bg-background shadow-lg z-[5000] p-3 sm:px-10 items-center justify-around sm:justify-center space-x-4 sm:space-x-8",
           className
         )}
       >
         <Link
           href={"/"}
           className={cn(
-            "relative items-center flex space-x-1 text-gray-200 hover:text-primary text-sm sm:text-base"
+            "relative items-center flex space-x-1 text-gray-200 hover:text-primary text-base"
           )}
         >
-          HOME
+          Back to top
         </Link>
         {navItems.map((navItem: any) => (
           <Link
             key={navItem.name}
             href={navItem.link}
             className={cn(
-              "relative items-center flex space-x-1 text-gray-200 hover:text-primary text-sm sm:text-base"
+              "relative items-center space-x-1 text-gray-200 hover:text-primary text-sm sm:text-base hidden sm:flex"
             )}
           >
             {navItem.name}
           </Link>
         ))}
-        <button className="text-background bg-primary rounded-md py-1 px-2 sm:px-6 mr-6 text-sm sm:text-base hidden sm:block">
-          <span>Connect</span>
-        </button>
+        <CtaButton />
       </motion.div>
     </AnimatePresence>
   );
