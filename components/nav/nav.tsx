@@ -41,7 +41,7 @@ export const Nav = () => {
             alt="logo"
           />
         </Link>
-        <div className="items-center gap-4 sm:gap-12 text-primary text-sm sm:text-xl font-light sm:flex hidden">
+        <div className="items-center gap-4 sm:gap-12 text-primary text-sm sm:text-xl font-light lg:flex hidden">
           {navItems.map((navItem) => (
             <Link
               key={navItem.name}
@@ -60,7 +60,7 @@ export const Nav = () => {
           <CtaButton />
         </div>
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="block sm:hidden">
+          <SheetTrigger asChild className="block lg:hidden">
             <button>
               <HamburgerMenuIcon className="h-6 w-6 text-primary" />
             </button>

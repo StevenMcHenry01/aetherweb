@@ -61,12 +61,12 @@ export const FloatingNav = ({
         )}
       >
         <Link
-          href={"/"}
+          href={"/#hero"}
           className={cn(
             "relative items-center flex space-x-1 text-gray-200 hover:text-primary text-base"
           )}
         >
-          Back to top
+          BACK TO TOP
         </Link>
         {navItems.map((navItem: any) => (
           <Link
