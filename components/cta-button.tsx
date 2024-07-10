@@ -24,7 +24,7 @@ export const CtaButton = ({
       <DialogContent className="md:p-8">
         <iframe
           className="w-full h-[calc(100vh-140px)] md:h-[50vh] overflow-y-auto "
-          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1VPXT7O30JWW-Bs3pal-IURmiNjvO0mJ5FegehqMqNIKtOM4Ac14P5EzuJF99GT5wQfFK04WTr?gv=true"
+          src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0UZUkKgCsM_0Lyi0DiUfRxbdDEBb_yMG8M4U4hMcBntChXgi5SKQRli6Iy9IenEVDPYivIxT4f?gv=true"
           title="Book a consultation"
         />
       </DialogContent>

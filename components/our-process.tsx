@@ -20,7 +20,7 @@ const steps = [
   {
     id: "03",
     title: "DESIGN",
-    text: "We&apos;ll send you a high fidelity look and feel of your finished product for you to review. We aim to get as close as possible to your desired outcome in the first go, keeping timeline top of mind.",
+    text: "We'll send you a high fidelity look and feel of your finished product for you to review. We aim to get as close as possible to your desired outcome in the first go, keeping timeline top of mind.",
     textAlign: "sm:text-right",
   },
   {
