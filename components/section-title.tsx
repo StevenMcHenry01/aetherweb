@@ -21,7 +21,7 @@ export const SectionTitle = ({
             initial={{ opacity: 0, y: -20, rotate: -5 }}
             whileInView={{ opacity: 1, y: 0, rotate: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: index * 0.2 }}
+            transition={{ duration: 1, delay: index * 0.2 }}
           >
             {word}
           </motion.h2>
@@ -33,7 +33,7 @@ export const SectionTitle = ({
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.7 }}
       ></motion.div>
     </div>
   );

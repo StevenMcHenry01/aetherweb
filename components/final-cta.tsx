@@ -11,7 +11,7 @@ export const FinalCta = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <SectionWrapper className="items-center pt-0 lg:pt-10">
+    <SectionWrapper className="items-center pt-0 sm:pt-0 md:pt-0 lg:pt-0">
       <div ref={ref}>
         <AnimatePresence>
           {isInView && (
@@ -26,8 +26,8 @@ export const FinalCta = () => {
                 transition={{ duration: 1.3, delay: 1.6 }}
               >
                 <CtaButton
-                  text="LETS CONNECT"
-                  className="px-10 py-8 bg-background text-primary border border-primary hover:bg-primary hover:text-background"
+                  text="LET'S CONNECT"
+                  className="px-6 sm:px-10 py-6 sm:py-8 bg-background text-primary border border-primary hover:bg-primary hover:text-background"
                 />
               </motion.div>
             </div>

@@ -15,7 +15,7 @@ export const Hero = () => {
         </h1>
         <TextGenerateEffect words={words} />
         <h3 className="text-primary text-xl sm:text-4xl pt-2 sm:pt-6">
-          Turning great ideas into brands that people love{" "}
+          Transforming established brands into lead generation machines
         </h3>
         <Link
           className="mt-10 sm:mt-32 text-xl sm:text-3xl ml-auto text-primary font-light pb-40 sm:pb-0"

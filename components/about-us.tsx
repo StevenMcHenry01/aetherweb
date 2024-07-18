@@ -31,12 +31,13 @@ export const AboutUs = () => {
               alt="Person photo"
               width={400}
               height={600}
-              className="rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-800 hover:scale-[1.02]"
+              className="rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-800 hover:scale-[1.02] w-3/4 sm:w-full"
             />
             <motion.h2
               initial={{ y: -15, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
+              viewport={{ once: true }}
               className="text-xl sm:text-3xl text-secondary font-medium"
             >
               {person.name}

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { theme } from "../theme.config";
 import { SectionTitle } from "./section-title";
 import { SectionWrapper } from "./section-wrapper";
@@ -48,12 +51,35 @@ const stats = [
 ];
 
 export const WhyUs = () => {
+  const [openItem, setOpenItem] = useState("item-1");
+  const [userInteracted, setUserInteracted] = useState(false);
+
+  useEffect(() => {
+    if (userInteracted) return;
+
+    const items = accordionItems.map((item) => item.value);
+    let currentIndex = 0;
+
+    const interval = setInterval(() => {
+      setOpenItem(items[currentIndex]);
+      currentIndex = (currentIndex + 1) % items.length;
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [userInteracted]);
+
+  const handleAccordionChange = (value: string) => {
+    setOpenItem(value);
+    setUserInteracted(true);
+  };
   return (
     <SectionWrapper id="why-us" className="!pb-20">
       <SectionTitle title="Why Us" color={theme.tertiary} />
       <Accordion
         type="single"
         collapsible
+        value={openItem}
+        onValueChange={handleAccordionChange}
         className="p-3 sm:p-8 my-5 sm:my-10 text-tertiary"
       >
         {accordionItems.map((item) => (
@@ -79,9 +105,9 @@ export const WhyUs = () => {
       </Accordion>
 
       <div className="pt-10 w-full flex flex-wrap gap-10">
-        {stats.map((stat, index) => (
+        {stats.map((stat) => (
           <div
-            key={index}
+            key={stat.text}
             className="text-tertiary flex justify-center flex-col items-center p-6 sm:p-10 border-2 border-tertiary rounded-xl flex-1 text-center h-[225px] min-w-[240px] sm:min-w-[290px] transition-all hover:bg-tertiary hover:text-background duration-500"
           >
             <h2 className="text-4xl sm:text-5xl font-consolas">

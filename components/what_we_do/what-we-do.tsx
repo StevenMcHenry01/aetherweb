@@ -119,6 +119,7 @@ export const WhatWeDo = () => {
             initial={{ y: -15, opacity: 0, rotate: -10 }}
             whileInView={{ y: 4, opacity: 1, rotate: 0 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true }}
             whileHover={{ y: -25 }}
           >
             <Image
@@ -132,6 +133,7 @@ export const WhatWeDo = () => {
             initial={{ y: 15, opacity: 0, rotate: 20 }}
             whileInView={{ y: 0, opacity: 1, rotate: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
+            viewport={{ once: true }}
             whileHover={{ y: 25 }}
           >
             <Image
