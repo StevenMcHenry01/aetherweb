@@ -31,7 +31,7 @@ export const AboutUs = () => {
               alt="Person photo"
               width={400}
               height={600}
-              className="rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-800 hover:scale-[1.02] w-3/4 sm:w-full"
+              className="rounded-xl transition-all duration-500 hover:shadow-2xl hover:shadow-slate-800 hover:scale-[1.02] w-3/4 sm:w-[400px]"
             />
             <motion.h2
               initial={{ y: -15, opacity: 0 }}

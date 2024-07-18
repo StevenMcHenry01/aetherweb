@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { theme } from "../theme.config";
 import { SectionTitle } from "./section-title";
 import { SectionWrapper } from "./section-wrapper";
@@ -51,11 +52,13 @@ const stats = [
 ];
 
 export const WhyUs = () => {
-  const [openItem, setOpenItem] = useState("item-1");
+  const [openItem, setOpenItem] = useState("");
   const [userInteracted, setUserInteracted] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
   useEffect(() => {
-    if (userInteracted) return;
+    if (userInteracted || !isInView) return;
 
     const items = accordionItems.map((item) => item.value);
     let currentIndex = 0;
@@ -63,46 +66,49 @@ export const WhyUs = () => {
     const interval = setInterval(() => {
       setOpenItem(items[currentIndex]);
       currentIndex = (currentIndex + 1) % items.length;
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [userInteracted]);
+  }, [isInView, userInteracted]);
 
   const handleAccordionChange = (value: string) => {
     setOpenItem(value);
     setUserInteracted(true);
   };
+
   return (
     <SectionWrapper id="why-us" className="!pb-20">
       <SectionTitle title="Why Us" color={theme.tertiary} />
-      <Accordion
-        type="single"
-        collapsible
-        value={openItem}
-        onValueChange={handleAccordionChange}
-        className="p-3 sm:p-8 my-5 sm:my-10 text-tertiary"
-      >
-        {accordionItems.map((item) => (
-          <AccordionItem
-            key={item.value}
-            value={item.value}
-            className="border-none"
-          >
-            <AccordionTrigger
-              className="flex justify-between hover:text-tertiary-dark hover:no-underline border-b-2 border-tertiary mb-4"
-              hideArrow
+      <motion.div ref={ref}>
+        <Accordion
+          type="single"
+          collapsible
+          value={openItem}
+          onValueChange={handleAccordionChange}
+          className="p-3 sm:p-8 my-5 sm:my-10 text-tertiary"
+        >
+          {accordionItems.map((item) => (
+            <AccordionItem
+              key={item.value}
+              value={item.value}
+              className="border-none"
             >
-              <h2 className="text-lg sm:text-3xl">{item.title}</h2>
-              <h2 className="text-lg sm:text-3xl font-consolas">
-                {item.index}
-              </h2>
-            </AccordionTrigger>
-            <AccordionContent className="py-5 text-base sm:text-2xl font-light">
-              {item.content}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+              <AccordionTrigger
+                className="flex justify-between hover:text-tertiary-dark hover:no-underline border-b-2 border-tertiary mb-4"
+                hideArrow
+              >
+                <h2 className="text-lg sm:text-3xl">{item.title}</h2>
+                <h2 className="text-lg sm:text-3xl font-consolas">
+                  {item.index}
+                </h2>
+              </AccordionTrigger>
+              <AccordionContent className="py-5 text-base sm:text-2xl font-light">
+                {item.content}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </motion.div>
 
       <div className="pt-10 w-full flex flex-wrap gap-10">
         {stats.map((stat) => (
