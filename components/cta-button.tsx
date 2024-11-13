@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Button } from "./ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "./ui/dialog";
 
 export const CtaButton = ({
   text = "Connect",
@@ -22,6 +22,7 @@ export const CtaButton = ({
         </Button>
       </DialogTrigger>
       <DialogContent className="md:p-8">
+        <DialogTitle>Book a consultation</DialogTitle>
         <iframe
           className="w-full h-[calc(100vh-140px)] md:h-[50vh] overflow-y-auto "
           src="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0UZUkKgCsM_0Lyi0DiUfRxbdDEBb_yMG8M4U4hMcBntChXgi5SKQRli6Iy9IenEVDPYivIxT4f?gv=true"

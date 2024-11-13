@@ -18,14 +18,12 @@ const cards = [
       "If you're current solution isn't contributing to your business goals or your website simply looks like it was built in the 90s, we're here to change that. ",
     backDescription2:
       "We'll rebuild your digital identity so you can succeed in today's digital first economy.",
-    startingAt: "Starting at $4,500",
   },
   {
     title: "MAKE IT ETHEREAL",
     description: "Startups & custom applications",
     backDescription:
       "Ready to finally take the leap? We know how stressful it can be to start your new business, we’ve been there! We’ll set you up with all the must-have marketing assets and technology tools you may need to effectively run your new business.",
-    startingAt: "Starting at $5,600",
   },
 ];
 
@@ -34,13 +32,11 @@ const Card = ({
   description,
   backDescription,
   backDescription2,
-  startingAt,
 }: {
   title: string;
   description: string;
   backDescription: string;
   backDescription2?: string;
-  startingAt?: string;
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -90,9 +86,7 @@ const Card = ({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.5 }}
-            >
-              {startingAt}
-            </motion.p>
+            ></motion.p>
           </div>
         )}
       </AnimatePresence>
@@ -153,7 +147,6 @@ export const WhatWeDo = () => {
             description={card.description}
             backDescription={card.backDescription}
             backDescription2={card.backDescription2}
-            startingAt={card.startingAt}
           />
         ))}
       </div>
